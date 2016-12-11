@@ -44,7 +44,7 @@ io.on('connection',function (socket){
 				});
 				delete clientInfo[socket.id];
 
-				
+
 		}
 	});
 	socket.on('joinRoom',function (req){
@@ -63,9 +63,9 @@ io.on('connection',function (socket){
 				sendCurrentUsers(socket);
 		}else{
 			message.timestamp = moment().valueOf();
-			io.to(clientInfo[socket.id].room).emit('message',message);	
+			io.to(clientInfo[socket.id].room).emit('message',message);
 		}
-		
+
 	});
 	socket.emit('message',{
 		name:'system',
